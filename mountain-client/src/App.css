@@ -30,6 +30,10 @@ body {
     background-color: black;
     width: 100vw;
     height: 3rem;
+    pointer-events: auto;
+}
+.logo {
+    font-size: 2rem;
 }
 
 .mainBody {
@@ -47,7 +51,6 @@ body {
 }
 
 .leftSidebar {
-    width: 3rem;
     height: 100%;
     background-color: gray;
     /* border-right: 1px solid white; */
@@ -55,7 +58,7 @@ body {
 }
 
 .tableSection {
-    /* width: 50%; */
+    width: 80%;
     height: 100%;
     background-color: #00000055;
     /* margin-left: 2rem; */
@@ -70,9 +73,13 @@ body {
 }
 
 .table {
+    padding: 1rem;
+    padding-right: 0;
+    /* height: 100%; */
     width: 100%;
     margin: 1rem;
     background-color: darkgray;
+    border-radius: 12px;
 }
 
 .tableHeader {
@@ -80,4 +87,39 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+}
+
+.tableHeader > div {
+    /* width: 12rem; */
+    margin-right: 1rem;
+}
+
+.tableContent {
+    height: 100%;
+    overflow: auto;
+    padding-right: 1rem;
+}
+.tableContent::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.tableContent::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* Thumb (the draggable part) */
+    border-radius: 10px;
+}
+
+.tableContent::-webkit-scrollbar-track {
+    background: transparent; /* Track (background behind the thumb) */
+}
+
+.tableRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tableRow > div {
+    /* width: 12rem; */
 }

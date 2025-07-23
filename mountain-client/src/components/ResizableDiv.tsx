@@ -68,9 +68,9 @@ const ResizableDiv = ({
                     onMouseDown={() => setIsResizing(true)}
                     style={{
                         height: "100%",
-                        width: "5px",
+                        width: "2px",
                         cursor: "ew-resize",
-                        background: "#fff",
+                        background: "#ffffffaa",
                     }}
                 />
             )}
@@ -81,9 +81,9 @@ const ResizableDiv = ({
                     onMouseDown={() => setIsResizing(true)}
                     style={{
                         height: "100%",
-                        width: "5px",
+                        width: "2px",
                         cursor: "ew-resize",
-                        background: "#fff",
+                        background: "#ffffffaa",
                     }}
                 />
             )}
