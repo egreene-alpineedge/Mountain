@@ -1,5 +1,34 @@
+:root {
+    --bg-dark: hsl(0, 0%, 0%);
+    --bg: hsl(0, 0%, 10%);
+    --bg-light: hsl(0, 0%, 20%);
+    --bg-lighter: hsl(0, 0%, 30%);
+    --bg-lightest: hsl(0, 0%, 40%);
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 70%);
+}
+/* :root {
+    --bg-dark: hsl(0, 0%, 80%);
+    --bg: hsl(0, 0%, 90%);
+    --bg-light: hsl(0, 0%, 100%);
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+} */
+
+/* :root {
+    --bg-dark: #191b1f;
+    --bg: #25262c;
+    --bg-light: #35363d;
+    --text: #fff;
+    --text-muted: hsl(0, 0%, 70%);
+} */
+button {
+    all: unset;
+}
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
 }
 
 .map {
@@ -27,10 +56,11 @@ body {
     flex-direction: row;
     justify-content: start;
     color: #fff;
-    background-color: black;
+    background-color: var(--bg-dark);
     width: 100vw;
     height: 3rem;
     pointer-events: auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 .logo {
     font-size: 2rem;
@@ -52,34 +82,75 @@ body {
 
 .leftSidebar {
     height: 100%;
-    background-color: gray;
+    background-color: var(--bg);
     /* border-right: 1px solid white; */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
+.filterBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    width: 16rem;
+    gap: 1rem;
+}
+.filterBoxTitle {
+    margin-top: 1rem;
+}
+.filterBoxTextField {
+    all: unset;
+    background-color: #fff;
+    text-align: left;
+    height: 2.8rem;
+    width: 13.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    padding-left: 1rem;
+}
+.filterBoxRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+.filterBoxOption {
+    width: 6.563rem;
+    height: 2.5rem;
+    padding: 0.2rem;
+    border-radius: 12px;
+    background-color: var(--bg-lighter);
+    color: var(--text);
+}
+.filterBoxRange {
+}
 
 .tableSection {
-    width: 80%;
+    width: 50%;
     height: 100%;
-    background-color: #00000055;
+    background-color: #25262caa;
     /* margin-left: 2rem; */
     /* border-right: 1px solid white; */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     overflow: auto;
 }
 
 .rightSidebar {
     height: 100%;
-    background-color: gray;
+    background-color: var(--bg);
 }
 
 .table {
     padding: 1rem;
-    padding-right: 0;
     /* height: 100%; */
     width: 100%;
-    margin: 1rem;
-    background-color: darkgray;
+    margin: 2rem;
+    background-color: var(--bg-light);
     border-radius: 12px;
+    color: var(--text);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 5);
+    padding-bottom: 3rem;
 }
 
 .tableHeader {
@@ -87,20 +158,16 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-}
-
-.tableHeader > div {
-    /* width: 12rem; */
-    margin-right: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .tableContent {
     height: 100%;
     overflow: auto;
-    padding-right: 1rem;
+    /* padding-right: 1rem; */
 }
 .tableContent::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
     height: 8px;
 }
 
@@ -118,8 +185,38 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid var(--bg);
 }
 
 .tableRow > div {
-    /* width: 12rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tableRow > div > img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 8px;
+}
+
+.nameField {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: start !important;
+}
+
+.nameAndStateText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.6rem;
+}
+
+.subText {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
 }

@@ -10,10 +10,11 @@ function Map() {
 
     // useEffect(() => {
     //     mapboxgl.accessToken =
-    //         "pk.eyJ1IjoiZWdyZWVuZTAxNyIsImEiOiJjbWQ4dnQwZGUwMWF0MmxxM2dmZ3R4eHFsIn0.p7JZc_5YeQvQpOnOjLn3-w";
+    //         "";
     //     mapRef.current = new mapboxgl.Map({
     //         container: mapContainerRef.current,
-    //         center: [-71.30327, 44.27049],
+    //         style: "mapbox://styles/egreene017/cmdhv7u0y00be01ptcsa72o14",
+    //         center: [-78.30327, 43.77049],
     //         zoom: 6,
     //     });
 

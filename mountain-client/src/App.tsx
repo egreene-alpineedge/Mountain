@@ -37,18 +37,82 @@ function App() {
                 <div className="mainBody">
                     <div className="leftSide">
                         <ResizableDiv className="leftSidebar">
-                            <div style={{ width: "8rem" }}></div>
+                            <div className="filterBox">
+                                <div className="filterBoxTitle">Filter</div>
+
+                                <input
+                                    placeholder="Search"
+                                    className="filterBoxTextField"
+                                ></input>
+
+                                {/* States */}
+                                <div className="filterBoxTitle">States</div>
+                                <div className="filterBoxRow">
+                                    <button className="filterBoxOption">
+                                        New Hampshire
+                                    </button>
+                                    <button className="filterBoxOption">
+                                        New York
+                                    </button>
+                                </div>
+                                <div className="filterBoxRow">
+                                    <button className="filterBoxOption">
+                                        Maine
+                                    </button>
+                                    <button className="filterBoxOption">
+                                        Vermont
+                                    </button>
+                                </div>
+
+                                {/* Challenges */}
+                                <div className="filterBoxTitle">Challenges</div>
+                                <div className="filterBoxRow">
+                                    <button className="filterBoxOption">
+                                        NH 4000 footers
+                                    </button>
+                                    <button className="filterBoxOption">
+                                        ADK High Peaks
+                                    </button>
+                                </div>
+
+                                <div className="filterBoxRow">
+                                    <button className="filterBoxOption">
+                                        NE Hundred Highest
+                                    </button>
+                                    <button className="filterBoxOption">
+                                        Northeast 115
+                                    </button>
+                                </div>
+
+                                {/* Elevation */}
+                                <div className="filterBoxTitle">Elevation</div>
+                                <input
+                                    type="range"
+                                    className="filterBoxRange"
+                                ></input>
+
+                                {/* Prominence */}
+                                <div className="filterBoxTitle">Prominence</div>
+                                <input
+                                    type="range"
+                                    className="filterBoxRange"
+                                ></input>
+                            </div>
                         </ResizableDiv>
                         <ResizableDiv className="tableSection">
                             <div></div>
 
                             <div className="table">
                                 <div className="tableHeader">
-                                    <div>Name</div>
-                                    <div>Elevation</div>
-                                    <div>Prominence</div>
-                                    <div>Range</div>
-                                    <div>Location</div>
+                                    <div style={{ width: "30%" }}>Name</div>
+                                    <div style={{ width: "15%" }}>
+                                        Elevation
+                                    </div>
+                                    <div style={{ width: "15%" }}>
+                                        Prominence
+                                    </div>
+                                    <div style={{ width: "20%" }}>Range</div>
+                                    <div style={{ width: "20%" }}>Location</div>
                                 </div>
                                 <div className="tableContent">
                                     {mountains.map((mountain) => (
@@ -56,11 +120,28 @@ function App() {
                                             className="tableRow"
                                             key={mountain.id}
                                         >
-                                            <div>{mountain.name}</div>
-                                            <div>{mountain.elevation}</div>
-                                            <div>{mountain.prominence}</div>
-                                            <div>{mountain.range}</div>
-                                            <div>
+                                            <div
+                                                style={{ width: "30%" }}
+                                                className="nameField"
+                                            >
+                                                <img src="src/assets/test.jpg" />
+                                                <div className="nameAndStateText">
+                                                    <div>{mountain.name}</div>
+                                                    <div className="subText">
+                                                        {mountain.state}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style={{ width: "15%" }}>
+                                                {mountain.elevation} ft
+                                            </div>
+                                            <div style={{ width: "15%" }}>
+                                                {mountain.prominence} ft
+                                            </div>
+                                            <div style={{ width: "20%" }}>
+                                                {mountain.range}
+                                            </div>
+                                            <div style={{ width: "20%" }}>
                                                 {mountain.latitude},{" "}
                                                 {mountain.longitude}
                                             </div>
