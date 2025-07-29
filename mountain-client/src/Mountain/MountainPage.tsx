@@ -1,30 +1,17 @@
-import { useState, useEffect, useRef } from "react";
-import "./App.css";
-import Map from "./components/Map";
-import ResizableDiv from "./components/ResizableDiv";
-import type { Mountain } from "./types";
+import "../App.css";
+import Map from "../components/Map";
+import ResizableDiv from "../components/ResizableDiv";
+import { useMountainPage } from "./MountainPage.hooks";
 
-function App() {
-    const [mountains, setMountains] = useState<Array<Mountain>>([]);
-
-    const fetchData = async () => {
-        console.log("Fetching...");
-        try {
-            const response = await fetch("https://localhost:7022/mountain");
-            const data: Array<Mountain> = await response.json();
-
-            setMountains(data);
-        } catch (err) {
-            console.log("There was an error ", err);
-        }
-    };
+function MountainPage() {
+    const { mountains, refresh } = useMountainPage();
 
     return (
         <div>
             <Map />
             <div className="main">
                 <div className="header">
-                    <button className="logo" onClick={fetchData}>
+                    <button className="logo" onClick={refresh}>
                         M
                     </button>
                     <div className="headerItem">Home</div>
@@ -164,4 +151,4 @@ function App() {
     );
 }
 
-export default App;
+export default MountainPage;
